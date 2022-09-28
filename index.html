@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/8cd7772a80.js" crossorigin="anonymous"></script>
+  
+  <title>Frontend Mentor | Ping coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+    body{
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 18px;
+      color: hsl(209, 33%, 12%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    main{
+      width: 50%;
+    }
+    h1{
+      color: hsl(0, 0%, 59%);
+    }
+    span{
+      color: hsl(209, 33%, 12%);
+    }
+    .button{
+      background-color: hsl(223, 87%, 63%);
+      color: white;
+      border: 0 none;
+      height: 40px;
+    }
+    .button:hover,.icons a:hover{
+      background-color: hsl(223, 87%, 70%);
+      color: white;
+    }
+    .error-mes{
+      display: none;
+      font-size: 15px;
+    }
+    .footer{
+      font-size: 13px;
+    }
+    .input-container{
+      min-width: 60%;
+    }
+    @media (max-width:1000px) {
+      main{
+        min-width: 75%;
+      }
+      .input-container{
+        min-width: 50%;
+      }
+    }
+    @media (max-width: 500px) {
+      main{
+        min-width: 90%;
+      }
+      .group{
+        flex-direction: column;
+      }
+      .input-container,.button{
+        width: 100%;
+      }
+
+      .ms-3{
+        margin-left: 0 !important;
+        margin-top: 15px !important;
+      }
+      .error-mes{
+        font-size: 14px;
+      }
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main class="text-center p-5">
+    <div class="logo">
+      <img src="./images/logo.svg" alt="" class="m-5">
+    </div>
+    <h1>We are launching <span class="fw-bolder">soon!</span></h1>
+
+   <p class="my-4">Subscribe and get notified</p>
+  <div class="group d-flex justify-content-center mb-5 text-center">
+        <div class="input-container">
+          <input type="text" name="email" placeholder="Your email address" class="input form-control rounded-pill px-4">
+          <div class="error-mes text-danger">The email address is not formatted correctly</div>
+        </div>
+        <button class="button rounded-pill py-1 px-4 ms-3">Notify Me</button>
+  </div>
+  
+  <div class="img my-0 my-lg-3">
+    <img src="./images/illustration-dashboard.png" alt="" class="img-fluid">
+  </div>
+  <div class="icons my-3">
+    <a href="#" class="mx-2 p-2 rounded-pill"><i class=" fa-brands fa-facebook"></i></a>
+    <a href="#" class="mx-2 p-2 rounded-pill"><i class=" fa-brands fa-twitter"></i></a>
+    <a href="#" class="mx-2 p-2 rounded-pill"><i class=" fa-brands fa-instagram"></i></a>
+  </div>
+  <footer class="footer"> <p>&copy; Copyright Ping. All rights reserved.</p></footer>
+  </main>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.frontendmentor.io/profile/thidarnyien">Thidar Nyein</a>.
+    </p>
+  </footer>
+
+  <script>
+    const btn = document.querySelector(".button");
+    const input = document.querySelector(".input");
+    const err = document.querySelector(".error-mes");
+    btn.addEventListener("click", () => {
+      let inputValue = input.value;
+      if(inputValue === "thidar@gmail.com"){
+        console.log("Success ...")
+      } else{
+        input.classList.add("border-danger");
+        err.style.display = "block";
+      }
+    })
+  </script>
+</body>
+</html>
